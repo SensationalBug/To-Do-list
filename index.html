@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark mb-5">
+        <div class="container-fluid">
+          <div class="navbar-brand text-light">TO_DO LIST</div>
+          <div class="navbar-nav">
+            <button
+              class="btn btn-info"
+              data-bs-toggle="modal"
+              data-bs-target="#addModal"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <div
+              class="modal fade"
+              id="addModal"
+              tabindex="-1"
+              aria-labelledby="addModal"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header bg-dark">
+                    <h5
+                      class="modal-title mx-auto text-light"
+                      id="exampleModalLabel"
+                    >
+                      Add task
+                    </h5>
+                  </div>
+                  <div class="modal-body">
+                    <input
+                      class="form-control my-2"
+                      type="text"
+                      placeholder="Task name"
+                      id="taskName"
+                    />
+                    <textarea
+                      placeholder="Task description"
+                      class="form-control"
+                      id="taskDesc"
+                      cols="30"
+                      rows="4"
+                    ></textarea>
+                    <div class="content my-2">
+                      <p class="my-1">Priority:</p>
+                      <select
+                        class="form-control w-50 d-inline mr-auto"
+                        name="select"
+                        id="select"
+                      >
+                        <option selected></option>
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                      </select>
+                      <button
+                        type="button"
+                        class="btn btn-success d-inline float-right"
+                        id="addButton"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container">
+        <div id="globalContainer" class="row"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/4815fc86cb.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyBRSs-HdgmaAbUpeiBB4Vt49QWuR9HYyAg",
+        authDomain: "todo-ee1bb.firebaseapp.com",
+        databaseURL: "https://todo-ee1bb-default-rtdb.firebaseio.com",
+        projectId: "todo-ee1bb",
+        storageBucket: "todo-ee1bb.appspot.com",
+        messagingSenderId: "975997802236",
+        appId: "1:975997802236:web:8ed1a7502b0ec518c1a979",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
